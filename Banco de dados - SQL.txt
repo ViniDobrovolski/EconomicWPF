@@ -1,0 +1,25 @@
+create table usuario (
+	id serial primary key,
+	email varchar(60),
+        senha varchar(20),
+	nomeCompleto varchar(40),
+	telefone varchar(12),
+	rendaMensal decimal
+	);
+	
+	create table tipoGasto (
+	id serial primary key,
+	nomeGasto varchar(50)
+	);
+	
+	
+	create table gasto (
+	id serial primary key,
+	usuarioID int,
+	tipoID int,
+	nome varchar(50),
+	valor decimal,
+	descricao varchar(50),
+	dataGasto date,
+	FOREIGN key (usuarioID) references usuario (id),
+	FOREIGN key (tipoID) references tipoGasto (id));

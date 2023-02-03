@@ -1,0 +1,62 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EconomicWPFDESKTOP"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="EconomicWPFDESKTOP.frmComparar"
+        mc:Ignorable="d"
+        Title="frmComparar" Height="450" Width="600"
+        AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None" ResizeMode="NoResize" Cursor="Arrow">
+    <Grid>
+        <Border CornerRadius="10">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#FF097D39" Offset="0.3"/>
+                    <GradientStop Color="#FF4C2690" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+
+
+
+
+
+        </Border>
+
+        <Button x:Name="btnComparar" Content="Comparar" Margin="510,29,10,388" Click="btnComparar_Click"/>
+        <Button x:Name="btnVoltar" Content="Voltar" Margin="494,394,26,24" Click="btnVoltar_Click"/>
+
+        <ComboBox x:Name="cbMes" BorderThickness="2" Height="25" Margin="182,36,262,0" ItemContainerStyle="{DynamicResource MaterialDesignComboBoxItemStyle}" Style="{DynamicResource MaterialDesignComboBox}" BorderBrush="#FFF7F7F7" Foreground="#FFF7F3F3" VerticalAlignment="Top">
+
+        </ComboBox>
+
+        <ComboBox x:Name="cbAno" BorderThickness="2" Height="25" Margin="343,36,103,0" ItemContainerStyle="{DynamicResource MaterialDesignComboBoxItemStyle}" Style="{DynamicResource MaterialDesignComboBox}" BorderBrush="#FFF7F7F7" Foreground="#FFF7F3F3" VerticalAlignment="Top">
+
+        </ComboBox>
+
+        <DataGrid x:Name="dataList"  Margin="22,84,50,84" FontSize="9" IsReadOnly="True" AutoGenerateColumns="False" Opacity="0.7" MouseDoubleClick="dataList_MouseDoubleClick">
+            <DataGrid.CellStyle>
+                <Style/>
+            </DataGrid.CellStyle>
+            <DataGrid.ColumnHeaderStyle>
+                <Style/>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.Columns>
+                <materialDesign:DataGridTextColumn Foreground="#FFF7F0F0" FontSize="14" Header="ID" MaxWidth="80" Binding="{Binding id}" MinWidth="50"/>
+                <materialDesign:DataGridTextColumn Binding="{Binding nome}" Foreground="#FFFDF8F8" FontSize="18"  Header="Nome" MaxWidth="100" MinWidth="90" IsReadOnly="True"/>
+                <materialDesign:DataGridTextColumn Binding="{Binding valor}" Foreground="#FFF30F0F" Header="Valor" MaxWidth="100" MinWidth="90" FontSize="14" IsReadOnly="True"/>
+                <materialDesign:DataGridTextColumn Foreground="#FFF5E9E9" Header="Data Gasto" Binding="{Binding datagasto}" MaxWidth="110" MinWidth="100" FontSize="14" IsReadOnly="True" Visibility="Visible"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <Image Source="Imagens/EconomicLogoWhite.png" Margin="1,0,415,348"/>
+
+
+
+
+
+    </Grid>
+</Window>

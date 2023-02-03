@@ -1,0 +1,159 @@
+﻿<Window x:Class="EconomicWPF.frmMenuPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EconomicWPF"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        mc:Ignorable="d"
+        Title="frmMenuPrincipal" Height="450" Width="800"
+        AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None"  ResizeMode="NoResize"
+        >
+    <Grid>
+        <Border CornerRadius="10">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#FF097D39" Offset="0.3"/>
+                    <GradientStop Color="#FF4C2690" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition />
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+
+
+
+
+
+
+            <Image Source="Imagens/EconomicLogoWhite.png" Grid.ColumnSpan="2" Margin="-21,-55,558,323" Grid.RowSpan="2" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.442"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+
+            <StackPanel Grid.Row="1">
+
+                <Button Content="Novo Gasto"
+                             Height="50"
+                            
+                             FontSize="14"
+                             FontFamily="helvetica"
+                             Margin="0,10" Click="Button_Click_1"
+                             />
+
+
+                <Button Content="Tipo de Gastos"
+                             Height="50"
+                             
+                             FontSize="14"
+                             Margin="0,10"
+                             FontFamily="helvetica" Click="Button_Click_2"
+                             />
+
+
+                <Button x:Name="btnComparar" Content="Comparar Gastos"
+                             Height="50"
+                             
+                             FontSize="14"
+                             FontFamily="helvetica"
+                             Margin="0,10" Click="btnComparar_Click"
+                             />
+
+                <Button x:Name="btnResumo" Content="Resumo dos Gastos"
+                             Height="50"
+                             
+                             FontSize="14"
+                             FontFamily="helvetica"
+                             Margin="0,100" Click="btnResumo_Click"
+                             />
+
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" >
+
+                <Button x:Name="btnEditarUsu" Content="Editar Usuário"
+                             Width="80"
+                             Height="50"
+                             FontSize="10"
+                             FontFamily="helvetica"
+                             Margin="50,22,470,0" Click="btnEditarUsu_Click"
+                             
+                             />
+
+
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" >
+
+                <Button x:Name="btnDeslogar" Content="Deslogar"
+                             Width="80"
+                             Height="50"
+                             FontSize="10"
+                             FontFamily="helvetica"
+                             Margin="350,22,0,0" Click="btnDeslogar_Click"
+                             
+                             />
+
+
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" >
+
+                <Button Content="Sair"
+                             Width="80"
+                             Height="50"
+                             FontSize="10"
+                             FontFamily="helvetica"
+                             Margin="520,22,0,0" Click="Button_Click"
+                             
+                             />
+
+
+            </StackPanel>
+
+
+
+
+
+            <lvc:PieChart Grid.Row="1" x:Name="Chart" Series="{Binding SeriesCollection}" 
+                      LegendLocation="Right" InnerRadius="0" Margin="47,38,47,38" Grid.Column="1" Foreground="White" BorderBrush="#FFAB2E2E">
+                <lvc:PieChart.ChartLegend>
+                    <lvc:DefaultLegend BulletSize="20"/>
+                </lvc:PieChart.ChartLegend>
+                <lvc:PieChart.DataTooltip>
+                    <lvc:DefaultTooltip BulletSize="20"/>
+                </lvc:PieChart.DataTooltip>
+            </lvc:PieChart>
+
+
+
+
+
+
+
+
+
+
+
+
+        </Grid>
+    </Grid>
+</Window>
